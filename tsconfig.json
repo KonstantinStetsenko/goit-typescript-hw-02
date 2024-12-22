@@ -4,11 +4,12 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",  // Для React 17 и выше
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"],  // Убедитесь, что путь к исходным файлам указан правильно
-  "exclude": ["node_modules", "dist", "public"]  // Исключите ненужные папки
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "public"]
 }
