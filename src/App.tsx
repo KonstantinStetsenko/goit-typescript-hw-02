@@ -95,25 +95,27 @@ function App() {
       <SearchBar onSearch={handleSearch} />
       {error && <ErrorMessager status={status} error={error} />}
       {loading ? (
-        <RotatingLinesLoader />
-      ) : !error && photos.length > 0 ? (
-        <ImageGallery
-          photos={photos}
-          openModal={(largeImageUrl: string, altDescription: string) =>
-            openModal(largeImageUrl, altDescription)
-          }
-        />
-      ) : (
-        !error &&
-        searchTerm && (
-          <p className="messege">
-            <span className="text">
-              Извините, по вашему запросу ничего не найдено.
-            </span>
-            <BsFillEmojiFrownFill size={60} />
-          </p>
-        )
-      )}
+  <RotatingLinesLoader />
+) : !error && photos.length > 0 ? (
+  <ImageGallery
+    photos={photos}
+    openModal={(largeImageUrl: string, altDescription: string) =>
+      openModal(largeImageUrl, altDescription)
+    }
+  />
+) : (
+  !error &&
+  searchTerm &&
+  photos.length === 0 && (
+    <p className="messege">
+      <span className="text">
+        Извините, по вашему запросу ничего не найдено.
+      </span>
+      <BsFillEmojiFrownFill size={60} />
+    </p>
+  )
+)}
+
       <ImageModal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
